@@ -52,44 +52,44 @@ class Joomla extends \Arall\CMSIdentifier\Signature
 
         $conditions = array(
             '1.0.x' => array(
-                new Probes\StringProbe('/* OpenID icon style */', 100),
-                new Probes\StringProbe('* @copyright Copyright (C) 2005 – 2010 Open Source Matters.', 100, '/templates/system/css/template.css'),
+                new Probes\ContentStringProbe('/* OpenID icon style */', 100),
+                new Probes\ContentStringProbe('* @copyright Copyright (C) 2005 – 2010 Open Source Matters.', 100, '/templates/system/css/template.css'),
             ),
             '1.5' => array(
-                new Probes\StringProbe('MooTools={version:\'1.12\'}', 100, '/media/system/js/mootools-more.js'),
+                new Probes\ContentStringProbe('MooTools={version:\'1.12\'}', 100, '/media/system/js/mootools-more.js'),
             ),
             '1.5.26' => array(
-                new Probes\StringProbe('# $Id: en-GB.ini 11391 2009-01-04 13:35:50Z ian $', 100, '/language/en-GB/en-GB.ini'),
+                new Probes\ContentStringProbe('# $Id: en-GB.ini 11391 2009-01-04 13:35:50Z ian $', 100, '/language/en-GB/en-GB.ini'),
             ),
             '1.6' => array(
-                new Probes\StringProbe('MooTools.More={version:"1.3.0.1"', 100, '/media/system/js/mootools-more.js'),
+                new Probes\ContentStringProbe('MooTools.More={version:"1.3.0.1"', 100, '/media/system/js/mootools-more.js'),
             ),
             '1.6.0' => array(
-                new Probes\StringProbe('; $Id: en-GB.ini 20196 2011-01-09 02:40:25Z ian $', 100, '/language/en-GB/en-GB.ini'),
+                new Probes\ContentStringProbe('; $Id: en-GB.ini 20196 2011-01-09 02:40:25Z ian $', 100, '/language/en-GB/en-GB.ini'),
             ),
             '1.6.5' => array(
-                new Probes\StringProbe('; $Id: en-GB.ini 20990 2011-03-18 16:42:30Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
+                new Probes\ContentStringProbe('; $Id: en-GB.ini 20990 2011-03-18 16:42:30Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
             ),
             '1.7' => array(
-                new Probes\StringProbe('MooTools.More={version:"1.3.2.1"', 100, '/media/system/js/mootools-more.js'),
+                new Probes\ContentStringProbe('MooTools.More={version:"1.3.2.1"', 100, '/media/system/js/mootools-more.js'),
             ),
             '1.7.1' => array(
-                new Probes\StringProbe('; $Id: en-GB.ini 20990 2011-03-18 16:42:30Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
+                new Probes\ContentStringProbe('; $Id: en-GB.ini 20990 2011-03-18 16:42:30Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
             ),
             '1.7.3' => array(
-                new Probes\StringProbe('; $Id: en-GB.ini 22183 2011-09-30 09:04:32Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
+                new Probes\ContentStringProbe('; $Id: en-GB.ini 22183 2011-09-30 09:04:32Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
             ),
             '1.7.5' => array(
-                new Probes\StringProbe('; $Id: en-GB.ini 22183 2011-09-30 09:04:32Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
+                new Probes\ContentStringProbe('; $Id: en-GB.ini 22183 2011-09-30 09:04:32Z infograf768 $', 100, '/language/en-GB/en-GB.ini'),
             ),
             '2.5.x' => array(
-                new Probes\StringProbe('2.5.0', 100, '/language/en-GB/en-GB.xml'),
+                new Probes\ContentStringProbe('2.5.0', 100, '/language/en-GB/en-GB.xml'),
             ),
             '2.5.6' => array(
-                new Probes\StringProbe('MooTools.More={version:"1.4.0.1"', 100, '/media/system/js/mootools-more.js'),
+                new Probes\ContentStringProbe('MooTools.More={version:"1.4.0.1"', 100, '/media/system/js/mootools-more.js'),
             ),
             '3.0' => array(
-                new Probes\StringProbe('MooTools.More={version:"1.4.0.1"', 100, '/media/system/js/mootools-more.js'),
+                new Probes\ContentStringProbe('MooTools.More={version:"1.4.0.1"', 100, '/media/system/js/mootools-more.js'),
             ),
         );
 
