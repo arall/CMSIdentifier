@@ -4,7 +4,7 @@ namespace Arall\CMSIdentifier\Signatures\Probes;
 
 use Arall\CMSIdentifier\Website;
 
-class RobotsProbe extends BooleanProbe
+class StringProbe extends BooleanProbe
 {
     /**
 	 * Wanted string
@@ -13,15 +13,23 @@ class RobotsProbe extends BooleanProbe
 	 */
     private $string;
 
-    public function __construct($string, $score = 0)
+    /**
+     * Website path
+     *
+     * @var sting
+     */
+    private $path;
+
+    public function __construct($string, $score = 0, $path = '/')
     {
-        $this->string = $string;
+        $this->string = strtolower($string);
         $this->score = $score;
+        $this->path = $path;
     }
 
     public function run(Website $website)
     {
-        $content = $website->getContent('/robots.txt');
+        $content = strtolower($website->getContent($this->path));
 
         if (strstr($content, $this->string)) {
             return true;

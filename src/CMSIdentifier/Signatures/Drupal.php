@@ -30,7 +30,9 @@ class Drupal extends \Arall\CMSIdentifier\Signature
         parent::__construct($website);
 
         $this->probes = array(
-            new Probes\MetaGeneratorProbe('drupal', 100),
+            new Probes\MetaGeneratorProbe($this->product, 100),
+            new Probes\StringProbe($this->product,        100, '/CHANGELOG.txt'),
+            new Probes\StringProbe($this->product,        100, '/misc/drupal.js'),
         );
     }
 }

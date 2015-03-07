@@ -30,7 +30,7 @@ class Wordpress extends \Arall\CMSIdentifier\Signature
         parent::__construct($website);
 
         $this->probes = array(
-            new Probes\MetaGeneratorProbe('wordpress', 100),
+            new Probes\MetaGeneratorProbe($this->product,   100),
         );
     }
 }

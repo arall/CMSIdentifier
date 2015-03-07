@@ -30,17 +30,17 @@ class Joomla extends \Arall\CMSIdentifier\Signature
         parent::__construct($website);
 
         $this->probes = array(
-            new Probes\MetaGeneratorProbe('joomla',    100),
-            new Probes\RobotsProbe('administrator',     10),
-            new Probes\RobotsProbe('cache',             10),
-            new Probes\RobotsProbe('images',            10),
-            new Probes\RobotsProbe('media',             10),
-            new Probes\RobotsProbe('components',        10),
-            new Probes\RobotsProbe('includes',          10),
-            new Probes\RobotsProbe('modules',           10),
-            new Probes\RobotsProbe('plugins',           10),
-            new Probes\RobotsProbe('templates',         10),
-            new Probes\DomProbe('input[name="passwd"]', 80, '/administrator'),
+            new Probes\MetaGeneratorProbe($this->product,   100),
+            new Probes\StringProbe('administrator',         10, '/robots.txt'),
+            new Probes\StringProbe('cache',                 10, '/robots.txt'),
+            new Probes\StringProbe('images',                10, '/robots.txt'),
+            new Probes\StringProbe('media',                 10, '/robots.txt'),
+            new Probes\StringProbe('components',            10, '/robots.txt'),
+            new Probes\StringProbe('includes',              10, '/robots.txt'),
+            new Probes\StringProbe('modules',               10, '/robots.txt'),
+            new Probes\StringProbe('plugins',               10, '/robots.txt'),
+            new Probes\StringProbe('templates',             10, '/robots.txt'),
+            new Probes\DomProbe('input[name="passwd"]',     80, '/administrator'),
         );
     }
 }
