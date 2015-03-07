@@ -29,10 +29,7 @@ class MetaGeneratorProbe extends BooleanProbe
 
     public function run(Website $website)
     {
-        $content = '';
-        if (!$this->path || $this->path == '/') {
-            $content = $website->content;
-        }
+        $content = $website->getContent($this->path);
 
         $regex = '<meta (name=[\'"]generator[\'"] ?|content=[\'"].*'.$this->generator.'.*[\'"] ?){2,}/?>';
 

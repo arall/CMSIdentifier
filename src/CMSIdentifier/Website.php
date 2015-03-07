@@ -2,6 +2,8 @@
 
 namespace Arall\CMSIdentifier;
 
+use \Curl\Curl;
+
 class Website
 {
     /**
@@ -12,11 +14,13 @@ class Website
     public $url;
 
     /**
-	 * Website index
+	 * Website contents
 	 *
-	 * @var string
+	 * @var array
 	 */
-    public $content;
+    public $contents = array(
+        '/' => null
+    );
 
     /**
 	 * Construct
@@ -34,14 +38,11 @@ class Website
             $this->url = $url;
 
             // Get index
-            $this->content = $this->getContent();
-
-            // Empty content?
-            if (!$this->content) {
-                throw new Exception('Empty content');
+            if ($this->getContent()) {
+                return true;
+            } else {
+                throw new \Exception('Empty content');
             }
-
-            return true;
         }
 
         // Invalid domain
@@ -51,17 +52,28 @@ class Website
     /**
      * Get URL content
      *
-     * @return
+     * @param  string $path
+     * @param  bool   $force Force request (ignore cache)
+     * @return string
      */
-    private function getContent()
+    public function getContent($path = '/', $force = false)
     {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,               $this->url);
-        curl_setopt($ch, CURLOPT_USERAGENT,         'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.41 Safari/537.36');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,    true);
-        curl_setopt($ch, CURLOPT_AUTOREFERER,       true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION,    true);
+        // Non existing content?
+        if ($force || !isset($this->contents[$path])) {
 
-        return curl_exec($ch);
+            $curl = new Curl();
+            $curl->setOpt(CURLOPT_RETURNTRANSFER,   true);
+            $curl->setOpt(CURLOPT_AUTOREFERER,      true);
+            $curl->setOpt(CURLOPT_FOLLOWLOCATION,   true);
+            $curl->get($this->url . $path);
+
+            if ($curl->error) {
+                return false;
+            }
+
+            $this->contents[$path] = $curl->response;
+        }
+
+        return $this->contents[$path];
     }
 }
