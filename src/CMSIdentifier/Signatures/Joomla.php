@@ -31,15 +31,15 @@ class Joomla extends \Arall\CMSIdentifier\Signature
 
         $this->probes = array(
             new Probes\MetaGeneratorProbe($this->product,   100),
-            new Probes\StringProbe('administrator',         10, '/robots.txt'),
-            new Probes\StringProbe('cache',                 10, '/robots.txt'),
-            new Probes\StringProbe('images',                10, '/robots.txt'),
-            new Probes\StringProbe('media',                 10, '/robots.txt'),
-            new Probes\StringProbe('components',            10, '/robots.txt'),
-            new Probes\StringProbe('includes',              10, '/robots.txt'),
-            new Probes\StringProbe('modules',               10, '/robots.txt'),
-            new Probes\StringProbe('plugins',               10, '/robots.txt'),
-            new Probes\StringProbe('templates',             10, '/robots.txt'),
+            new Probes\ContentStringProbe('administrator',  10, '/robots.txt'),
+            new Probes\ContentStringProbe('cache',          10, '/robots.txt'),
+            new Probes\ContentStringProbe('images',         10, '/robots.txt'),
+            new Probes\ContentStringProbe('media',          10, '/robots.txt'),
+            new Probes\ContentStringProbe('components',     10, '/robots.txt'),
+            new Probes\ContentStringProbe('includes',       10, '/robots.txt'),
+            new Probes\ContentStringProbe('modules',        10, '/robots.txt'),
+            new Probes\ContentStringProbe('plugins',        10, '/robots.txt'),
+            new Probes\ContentStringProbe('templates',      10, '/robots.txt'),
             new Probes\DomProbe('input[name="passwd"]',     80, '/administrator'),
         );
     }

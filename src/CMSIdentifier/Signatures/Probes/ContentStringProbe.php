@@ -4,7 +4,7 @@ namespace Arall\CMSIdentifier\Signatures\Probes;
 
 use Arall\CMSIdentifier\Website;
 
-class StringProbe extends BooleanProbe
+class ContentStringProbe extends BooleanProbe
 {
     /**
 	 * Wanted string

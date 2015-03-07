@@ -30,11 +30,11 @@ class Drupal extends \Arall\CMSIdentifier\Signature
         parent::__construct($website);
 
         $this->probes = array(
-            new Probes\MetaGeneratorProbe($this->product,           80),
-            new Probes\StringProbe($this->product,                  100,    '/CHANGELOG.txt'),
-            new Probes\StringProbe($this->product,                  100,    '/misc/drupal.js'),
-            new Probes\FileProbe('/misc/druplicon.png',             100),
-            new Probes\DateProbe('Sun, 19 Nov 1978 05:00:00 GMT',   60),
+            new Probes\MetaGeneratorProbe($this->product,                   80),
+            new Probes\ContentStringProbe($this->product,                   100,    '/CHANGELOG.txt'),
+            new Probes\ContentStringProbe($this->product,                   100,    '/misc/drupal.js'),
+            new Probes\FileProbe('/misc/druplicon.png',                     100),
+            new Probes\HeaderStringProbe('Sun, 19 Nov 1978 05:00:00 GMT',   60,     'Expires'),
         );
     }
 }

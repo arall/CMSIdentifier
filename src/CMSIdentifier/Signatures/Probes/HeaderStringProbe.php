@@ -4,21 +4,21 @@ namespace Arall\CMSIdentifier\Signatures\Probes;
 
 use Arall\CMSIdentifier\Website;
 
-class DateProbe extends BooleanProbe
+class HeaderStringProbe extends BooleanProbe
 {
     /**
-     * Custom date
+     * Custom string
      *
      * @var string
      */
-    private $date;
+    private $string;
 
     /**
-     * Kind of date
+     * Response header key
      *
      * @var string
      */
-    private $dateType;
+    private $key;
 
     /**
      * Website path
@@ -27,17 +27,17 @@ class DateProbe extends BooleanProbe
      */
     private $path;
 
-    public function __construct($date = false, $score = 0, $dateType = 'expires', $path = '/')
+    public function __construct($string = false, $score = 0, $key = false, $path = '/')
     {
-        $this->date = $date;
+        $this->string = $string;
         $this->score = $score;
-        $this->dateType = ucfirst($dateType);
+        $this->key = $key;
         $this->path = $path;
     }
 
     public function run(Website $website)
     {
-        if($this->date && $website->getResponse($this->path)->response_headers[$this->dateType] == $this->date) {
+        if($this->string && $this->key && $website->getResponse($this->path)->response_headers[ucfirst($this->key)] == $this->string) {
             return true;
         }
 
