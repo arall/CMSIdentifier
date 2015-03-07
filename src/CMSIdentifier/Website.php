@@ -14,12 +14,20 @@ class Website
     public $url;
 
     /**
-	 * Website contents
+     * Website contents
+     *
+     * @var array
+     */
+    public $contents = array(
+        '/' => null
+    );
+
+    /**
+	 * Website responses
 	 *
 	 * @var array
 	 */
-    public $contents = array(
-        '/' => null
+    public $responses = array(
     );
 
     /**
@@ -75,5 +83,33 @@ class Website
         }
 
         return $this->contents[$path];
+    }
+
+    /**
+     * Get URL header response
+     *
+     * @param  string $path
+     * @param  bool   $force Force request (ignore cache)
+     * @return string
+     */
+    public function getResponse($path = '/', $force = false)
+    {
+        // Non existing content?
+        if ($force || !isset($this->responses[$path])) {
+
+            $curl = new Curl();
+            $curl->setOpt(CURLOPT_RETURNTRANSFER,   true);
+            $curl->setOpt(CURLOPT_AUTOREFERER,      true);
+            $curl->setOpt(CURLOPT_FOLLOWLOCATION,   true);
+            $curl->get($this->url . $path);
+
+            if ($curl->error) {
+                return false;
+            }
+
+            $this->responses[$path] = $curl;
+        }
+
+        return $this->responses[$path];
     }
 }

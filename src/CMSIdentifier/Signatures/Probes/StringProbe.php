@@ -9,14 +9,14 @@ class StringProbe extends BooleanProbe
     /**
 	 * Wanted string
 	 *
-	 * @var sting
+	 * @var string
 	 */
     private $string;
 
     /**
      * Website path
      *
-     * @var sting
+     * @var string
      */
     private $path;
 
