@@ -20,7 +20,7 @@ class ContentStringProbe extends BooleanProbe
      */
     private $path;
 
-    public function __construct($string, $score = 0, $path = '/')
+    public function __construct($string, $path = '/', $score = 0)
     {
         $this->string = strtolower($string);
         $this->score = $score;

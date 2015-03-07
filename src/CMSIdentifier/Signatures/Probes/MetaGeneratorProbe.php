@@ -20,7 +20,7 @@ class MetaGeneratorProbe extends BooleanProbe
      */
     private $path;
 
-    public function __construct($generator, $score = 0, $path = '/')
+    public function __construct($generator, $path = '/', $score = 0)
     {
         $this->generator = strtolower($generator);
         $this->score = $score;

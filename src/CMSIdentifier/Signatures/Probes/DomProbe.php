@@ -21,7 +21,7 @@ class DomProbe extends BooleanProbe
 	 */
     private $path;
 
-    public function __construct($scope, $score = 0, $path = '/')
+    public function __construct($scope, $path = '/', $score = 0)
     {
         $this->path = $path;
         $this->scope = $scope;

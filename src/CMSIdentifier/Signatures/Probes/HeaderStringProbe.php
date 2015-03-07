@@ -27,7 +27,7 @@ class HeaderStringProbe extends BooleanProbe
      */
     private $path;
 
-    public function __construct($string = false, $score = 0, $key = false, $path = '/')
+    public function __construct($string = false, $key = false, $path = '/', $score = 0)
     {
         $this->string = $string;
         $this->score = $score;
@@ -37,8 +37,12 @@ class HeaderStringProbe extends BooleanProbe
 
     public function run(Website $website)
     {
-        if($this->string && $this->key && $website->getResponse($this->path)->response_headers[ucfirst($this->key)] == $this->string) {
-            return true;
+        if ($this->string && $this->key) {
+            if ($response = $website->getResponse($this->path)) {
+                if ($response->response_headers[ucfirst($this->key)] == $this->string) {
+                    return true;
+                }
+            }
         }
 
         return false;
