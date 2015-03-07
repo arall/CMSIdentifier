@@ -27,6 +27,7 @@ class CMSIdentifier
     private $signatures = array(
         'Arall\CMSIdentifier\Signatures\Joomla',
         'Arall\CMSIdentifier\Signatures\Wordpress',
+        'Arall\CMSIdentifier\Signatures\Drupal',
     );
 
     /**
