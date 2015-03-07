@@ -63,7 +63,7 @@ abstract class Signature
      */
     public function getScore()
     {
-        return $this->score;
+        return round($this->score * 100, 2) . '%';
     }
 
     /**

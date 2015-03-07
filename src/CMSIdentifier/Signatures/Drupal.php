@@ -4,21 +4,21 @@ namespace Arall\CMSIdentifier\Signatures;
 
 use Arall\CMSIdentifier\Website;
 
-class Wordpress extends \Arall\CMSIdentifier\Signature
+class Drupal extends \Arall\CMSIdentifier\Signature
 {
     /**
      * Product vendor
      *
      * @var string
      */
-    public $vendor = 'Wordpress';
+    public $vendor = 'Drupal';
 
     /**
      * Product name
      *
      * @var string
      */
-    public $product = 'Wordpress';
+    public $product = 'Drupal';
 
     /**
      * Construct
@@ -30,7 +30,7 @@ class Wordpress extends \Arall\CMSIdentifier\Signature
         parent::__construct($website);
 
         $this->probes = array(
-            new Probes\MetaGeneratorProbe('wordpress', 100),
+            new Probes\MetaGeneratorProbe('drupal', 100),
         );
     }
 }

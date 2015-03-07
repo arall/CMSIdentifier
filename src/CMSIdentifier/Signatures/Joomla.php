@@ -30,7 +30,7 @@ class Joomla extends \Arall\CMSIdentifier\Signature
         parent::__construct($website);
 
         $this->probes = array(
-            new Probes\MetaGeneratorProbe('Joomla!',    100),
+            new Probes\MetaGeneratorProbe('joomla',    100),
             new Probes\RobotsProbe('administrator',     10),
             new Probes\RobotsProbe('cache',             10),
             new Probes\RobotsProbe('images',            10),
