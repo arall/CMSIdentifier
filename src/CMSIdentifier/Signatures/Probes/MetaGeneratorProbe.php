@@ -9,7 +9,7 @@ class MetaGeneratorProbe extends BooleanProbe
     /**
 	 * Wanted generator name
 	 *
-	 * @var sting
+	 * @var string
 	 */
     private $generator;
 

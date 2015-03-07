@@ -10,14 +10,14 @@ class DomProbe extends BooleanProbe
     /**
 	 * Wanted scope
 	 *
-	 * @var sting
+	 * @var string
 	 */
     private $scope;
 
     /**
 	 * Website path
 	 *
-	 * @var sting
+	 * @var string
 	 */
     private $path;
 
