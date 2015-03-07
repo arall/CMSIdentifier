@@ -31,7 +31,7 @@ class MetaGeneratorProbe extends BooleanProbe
     {
         $content = $website->getContent($this->path);
 
-        $regex = '<meta (name=[\'"]generator[\'"] ?|content=[\'"]'.$this->generator.'[\w -]+[\'"] ?){2,}/>';
+        $regex = '<meta (name=[\'"]generator[\'"] ?|content=[\'"].*'.$this->generator.'.*[\'"] ?){2,}/?>';
 
         if (preg_match($regex, $content)) {
             return true;
