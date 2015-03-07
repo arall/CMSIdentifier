@@ -9,21 +9,14 @@ abstract class Signature
 	 *
 	 * @var Arall\CMSIdentifier\Website
 	 */
-    private $website;
+    protected $website;
 
     /**
      * Score (0/100)
      *
      * @var integer
      */
-    private $score;
-
-    /**
-     * Product version
-     *
-     * @var string
-     */
-    private $version;
+    protected $score;
 
     /**
      * Probes
@@ -59,20 +52,20 @@ abstract class Signature
     /**
      * Get Score
      *
-     * @return integer
+     * @return float
      */
     public function getScore()
     {
-        return round($this->score * 100, 2) . '%';
+        return round($this->score * 100, 2);
     }
 
     /**
      * Get version
      *
-     * @return srting
+     * @return false
      */
     public function getVersion()
     {
-        return $this->version;
+        return false;
     }
 }
