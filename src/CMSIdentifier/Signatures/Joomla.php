@@ -11,14 +11,14 @@ class Joomla extends \Arall\CMSIdentifier\Signature
      *
      * @var string
      */
-    public $vendor = 'Joomla';
+    protected $vendor = 'Joomla';
 
     /**
      * Product name
      *
      * @var string
      */
-    public $product = 'Joomla';
+    protected $product = 'Joomla';
 
     /**
      * Construct

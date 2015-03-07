@@ -11,14 +11,14 @@ class Drupal extends \Arall\CMSIdentifier\Signature
      *
      * @var string
      */
-    public $vendor = 'Drupal';
+    protected $vendor = 'Drupal';
 
     /**
      * Product name
      *
      * @var string
      */
-    public $product = 'Drupal';
+    protected $product = 'Drupal';
 
     /**
      * Construct

@@ -50,6 +50,26 @@ abstract class Signature
     }
 
     /**
+     * Get product name
+     *
+     * @return string
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Get vendor name
+     *
+     * @return string
+     */
+    public function getVendor()
+    {
+        return $this->vendor;
+    }
+
+    /**
      * Get Score
      *
      * @return float

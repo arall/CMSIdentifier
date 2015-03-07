@@ -11,14 +11,14 @@ class Wordpress extends \Arall\CMSIdentifier\Signature
      *
      * @var string
      */
-    public $vendor = 'Wordpress';
+    protected $vendor = 'Wordpress';
 
     /**
      * Product name
      *
      * @var string
      */
-    public $product = 'Wordpress';
+    protected $product = 'Wordpress';
 
     /**
      * Construct
