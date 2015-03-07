@@ -30,12 +30,13 @@ class DomProbe extends BooleanProbe
 
     public function run(Website $website)
     {
-        $content = $website->getContent($this->path);
+        if ($content = $website->getContent($this->path)) {
 
-        $crawler = new Crawler($content);
+            $crawler = new Crawler($content);
 
-        if ($crawler->filter($this->scope)->count()) {
-            return true;
+            if ($crawler->filter($this->scope)->count()) {
+                return true;
+            }
         }
 
         return false;
