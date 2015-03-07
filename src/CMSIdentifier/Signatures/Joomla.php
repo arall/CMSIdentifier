@@ -40,6 +40,7 @@ class Joomla extends \Arall\CMSIdentifier\Signature
             new Probes\RobotsProbe('modules',           10),
             new Probes\RobotsProbe('plugins',           10),
             new Probes\RobotsProbe('templates',         10),
+            new Probes\DomProbe('input[name="passwd"]', 80, '/administrator'),
         );
     }
 }
